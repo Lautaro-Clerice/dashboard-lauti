@@ -11,8 +11,8 @@ import {
   Input,
 } from "@heroui/react";
 import { Eye, EyeClosed } from "lucide-react";
-import Cookies from "cookies-js";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const FormData = () => {
   const { login, isPending, error } = useLogin();

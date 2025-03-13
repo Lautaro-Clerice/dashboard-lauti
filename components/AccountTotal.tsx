@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Chip } from "@heroui/react";
 import AccountRepository from "@/services/AccountRepository";
-import Cookies from "cookies-js";
+import Cookies from "js-cookie";
 const AccountTotal = () => {
   const [total, setTotal] = useState<number | null>(null);
 

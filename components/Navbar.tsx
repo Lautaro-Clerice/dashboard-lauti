@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Cookies from "cookies-js";
 import {
   Navbar,
   NavbarBrand,
@@ -12,12 +11,13 @@ import {
 } from "@heroui/react";
 import { ThemeSwitch } from "./theme-switch";
 import AccountTotal from "./AccountTotal";
-
+import Cookies from "js-cookie";
+import LoginRepository from "@/services/LoginRepository";
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const token = Cookies.get("token");
   const handleLogout = () => {
-    console.log("cerrar");
+    LoginRepository.logout();
   };
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
