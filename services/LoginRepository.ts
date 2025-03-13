@@ -2,9 +2,11 @@ import Cookies from "cookies-js";
 
 class LoginRepository {
   static logout() {
-    Cookies.expire("token");
-    Cookies.expire("userId");
-    window.location.href = "/login";
+    if (typeof window !== "undefined") {
+      Cookies.expire("token");
+      Cookies.expire("userId");
+      window.location.href = "/login";
+    }
   }
 }
 
