@@ -36,7 +36,7 @@ const FormData = () => {
         Cookies.set("token", user.token);
         Cookies.set("userId", user.user.id);
       }
-      router.push("/dashboard");
+      window.location.href = "/";
     } catch (err) {
       console.error("Error al iniciar sesión", err);
     }
@@ -44,7 +44,7 @@ const FormData = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <Card className="h-auto flex items-center justify-center gap-4">
+      <Card className="h-auto flex items-center justify-center gap-4 w-[90%] md:w-[600px]">
         <CardHeader className="flex justify-center">
           <h1 className="text-[24px]">Iniciar sesión</h1>
         </CardHeader>
@@ -57,11 +57,11 @@ const FormData = () => {
             onChange={(e) => setEmail(e.target.value)}
             label="Email"
             placeholder="Ingresa tu email"
-            className="max-w-xs"
+            className="max-w-full"
           />
           <Input
             name="password"
-            className="max-w-xs"
+            className="max-w-full "
             endContent={
               <button
                 aria-label="toggle password visibility"
